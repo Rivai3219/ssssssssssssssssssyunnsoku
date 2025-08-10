@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロ品質ホームページ制作 - 35,000円</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 250, 252, 0.90) 100%),
+                url('C:/Users/windows10/Pictures/瞬足デザイナー.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            display: none;
+        }
+
+        .hero {
+            background: transparent;
+            color: #374151;
+            padding: 80px 0 80px;
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        
+        
+        
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #374151;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #374151;
+        }
+
+        .hero .price {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #facc15;
+            margin-bottom: 20px;
+        }
+        
+
+        .limited-badge {
+            background: #facc15;
+            color: #374151;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .catchphrase {
+            font-size: 3.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #374151;
+            animation: slideInFromTop 1s ease-out;
+            line-height: 1.2;
+        }
+
+        .catchphrase-sub {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #374151;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideInFromBottom 1.2s ease-out, blink 2s infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes slideInFromTop {
+            0% { 
+                opacity: 0; 
+                transform: translateY(-50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% { 
+                opacity: 0; 
+                transform: translateY(50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.7; }
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #374151;
+        }
+
+        .features {
+            background: transparent;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .problem {
+            background: transparent;
+        }
+
+        .problem-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-list li {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .problem-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+        }
+
+        .solution {
+            background: transparent;
+        }
+
+        .solution-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .solution-list li {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .solution-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 20px;
+            font-size: 1.5rem;
+        }
+
+        .cta {
+            background: transparent;
+            color: #374151;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #facc15;
+            color: #374151;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(250, 204, 21, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(250, 204, 21, 0.4);
+        }
+
+        .guarantee {
+            background: #f1f3f4;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .guarantee h3 {
+            color: #38bdf8;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .urgency {
+            background: #facc15;
+            color: #374151;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .notice {
+            background: transparent;
+            padding: 60px 0;
+        }
+
+        .notice h2 {
+            color: #374151;
+            margin-bottom: 30px;
+        }
+
+        .notice-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .notice-content h3 {
+            color: #38bdf8;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .notice-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .notice-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .notice-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0;
+                background-attachment: scroll;
+                background: 
+                    linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 250, 252, 0.92) 100%),
+                    url('C:/Users/windows10/Pictures/瞬足デザイナー.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            
+            header {
+                position: relative;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0.5rem 0;
+            }
+            
+            .header-content h1 {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 80px 0 40px;
+                background-attachment: scroll;
+                margin-top: 0;
+            }
+            
+            .catchphrase {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                line-height: 1.3;
+            }
+            
+            .catchphrase-sub {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero .price {
+                font-size: 2.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .limited-badge {
+                font-size: 1rem;
+                padding: 8px 20px;
+                margin-bottom: 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+            
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .problem-list li,
+            .solution-list li {
+                padding: 20px;
+                padding-left: 50px;
+                margin: 15px 0;
+                font-size: 0.95rem;
+            }
+            
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 18px 35px;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+            }
+            
+            .urgency {
+                font-size: 1rem;
+                padding: 15px 10px;
+            }
+            
+            .notice-content {
+                padding: 25px 20px;
+            }
+            
+            .notice-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .notice-content li {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+                background: 
+                    linear-gradient(135deg, rgba(255, 255, 255, 0.90) 0%, rgba(248, 250, 252, 0.94) 100%),
+                    url('C:/Users/windows10/Pictures/瞬足デザイナー.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll;
+            }
+            
+            .hero {
+                padding: 50px 0 25px;
+            }
+            
+            .catchphrase-sub {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+                line-height: 1.2;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+            
+            .hero .price {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+            
+            .section {
+                padding: 25px 0;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .feature-card {
+                padding: 18px 12px;
+                margin-bottom: 15px;
+            }
+            
+            .feature-icon {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            
+            .feature-card p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .solution-list li {
+                padding: 12px;
+                padding-left: 35px;
+                margin: 10px 0;
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .solution-list li::before {
+                left: 12px;
+                font-size: 1rem;
+            }
+            
+            .notice-content {
+                padding: 15px 10px;
+            }
+            
+            .notice-content h3 {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+            
+            .notice-content li {
+                font-size: 0.8rem;
+                line-height: 1.4;
+                margin-bottom: 5px;
+            }
+            
+            .container {
+                padding: 0 8px;
+            }
+            
+            /* フォームのスマホ対応 */
+            form {
+                padding: 15px 10px !important;
+            }
+            
+            form input,
+            form select,
+            form textarea {
+                padding: 10px !important;
+                font-size: 0.9rem !important;
+                border-width: 1px !important;
+            }
+            
+            form label {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.3rem !important;
+            }
+            
+            form button {
+                padding: 12px 20px !important;
+                font-size: 1rem !important;
+            }
+            
+            form h3 {
+                font-size: 1.2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            form div {
+                margin-bottom: 0.8rem !important;
+            }
+            
+            form textarea {
+                min-height: 80px !important;
+            }
+            
+            /* CTAセクションのスマホ対応 */
+            .cta p {
+                font-size: 1.1rem !important;
+                margin-bottom: 20px !important;
+                line-height: 1.3;
+            }
+            
+            /* フォーム全体のコンテナ */
+            .cta > .container > div {
+                padding: 15px 10px !important;
+                margin: 15px 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>瞬足デザイナー</h1>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="catchphrase-sub">高品質・低価格・スピード対応</div>
+            <h1>ホームページ制作</h1>
+            <div class="price">¥35,000</div>
+        </div>
+    </section>
+
+
+
+    <section class="section solution">
+        <div class="container">
+            <ul class="solution-list">
+                <li><strong>35,000円の格安価格</strong><br>他社の半額以下でプロ品質のホームページを提供</li>
+                <li><strong>プロデザイナーが直接制作</strong><br>経験豊富なプロがオリジナルデザインで作成</li>
+                <li><strong>一貫した高品質デザイン</strong><br>同じプロが制作するので、ブランドイメージが統一</li>
+                <li><strong>1日以内で完成</strong><br>急いでホームページが必要な方も安心</li>
+                <li><strong>修正は完成まで無料</strong><br>満足いくまで何度でも修正します</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section features">
+        <div class="container">
+            <h2>サービスの強み</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>スピード対応</h3>
+                    <p>1日以内で完成、急ぎの方も安心です</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>プロ品質のデザイン</h3>
+                    <p>確かな実力と経験に基づく高品質なホームページ制作</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>結果にコミット</h3>
+                    <p>集客と売上アップを意識した効果的なホームページ構成</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: transparent;">
+        <div class="container">
+            <h2>制作実績</h2>
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1); text-align: center; backdrop-filter: blur(10px);">
+                        <h3 style="color: #38bdf8; font-size: 1.5rem; margin-bottom: 20px;">Beauty Salon - エステサロンサイト</h3>
+                        <p style="color: #666; margin-bottom: 20px;">※このサイトは架空の会社のホームページです。美容サロンのエレガントなデザインを重視した、モダンで洗練されたホームページ制作の実例として制作されました。</p>
+                        <br>
+                        <a href="https://rivai3219.github.io/esutesaronn/" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%); color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 10px;">実際のサイトを見る</a>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1); text-align: center; backdrop-filter: blur(10px);">
+                        <h3 style="color: #38bdf8; font-size: 1.5rem; margin-bottom: 20px;">ポケカレッジ</h3>
+                        <p style="color: #666; margin-bottom: 20px;">月額1,980円ポケカで全国どこからでも参加可能な学習環境を提供している。</p>
+                        <br>
+                        <a href="https://rivai3219.github.io/pokekarejji/" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%); color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 10px;">実際のサイトを見る</a>
+                    </div>
+                    
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1); text-align: center; backdrop-filter: blur(10px);">
+                        <h3 style="color: #38bdf8; font-size: 1.5rem; margin-bottom: 20px;">Cozy Café</h3>
+                        <p style="color: #666; margin-bottom: 20px;">※このサイトは架空の会社のホームページです。温かみのあるカフェサイトのデザイン実例として制作されました。</p>
+                        <br>
+                        <a href="https://rivai3219.github.io/coffee/" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%); color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 10px;">実際のサイトを見る</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta">
+        <div class="container">
+            <p style="font-size: 1.3rem; margin-bottom: 30px;">プロ品質のホームページが35,000円で手に入ります。</p>
+            
+
+            <div style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); margin: 2rem 0;">
+                <h3 style="color: #38bdf8; margin-bottom: 1.5rem; text-align: center;">お申し込み・お問い合わせフォーム</h3>
+                <form action="https://formspree.io/f/kanayanataya@gmail.com" method="POST" style="max-width: 600px; margin: 0 auto;">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">お名前 *</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">メールアドレス *</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">電話番号</label>
+                        <input type="tel" id="phone" name="phone" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">会社名・事業内容</label>
+                        <input type="text" id="company" name="company" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="inquiry-type" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">お問い合わせ種類 *</label>
+                        <select id="inquiry-type" name="inquiry-type" required style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;">
+                            <option value="">選択してください</option>
+                            <option value="ホームページ制作の申し込み">ホームページ制作の申し込み</option>
+                            <option value="詳細な見積もり依頼">詳細な見積もり依頼</option>
+                            <option value="サービス内容の質問">サービス内容の質問</option>
+                            <option value="その他のお問い合わせ">その他のお問い合わせ</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">ご希望・ご要望・お問い合わせ内容 *</label>
+                        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; resize: vertical;" placeholder="例：コーポレートサイトを制作したいです。参考サイトのURLも添付します。"></textarea>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="reference" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151;">参考サイト・URL（あれば）</label>
+                        <input type="url" id="reference" name="reference" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem;" placeholder="https://example.com">
+                    </div>
+                    
+                    <button type="submit" style="width: 100%; background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%); color: white; padding: 15px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+                        送信する
+                    </button>
+                </form>
+                
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #6b7280;">
+                    ※送信後、24時間以内にご返信いたします。<br>
+                    📧 直接メール: kanayanataya@gmail.com
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section notice">
+        <div class="container">
+            <h2>ご利用に関する注意事項</h2>
+            <div class="notice-content">
+                <h3>📋 サービス提供条件</h3>
+                <ul>
+                    <li>本サービスはホームページを1サイト制作します</li>
+                    <li>お申し込み後のキャンセルは原則として承っておりません</li>
+                    <li>サービス開始は入金確認後となります</li>
+                    <li>制作期間は最短1日、最長3日で完成します</li>
+                    <li><strong>ページ数は5ページまで対応</strong>(トップ・サービス・会社概要・お問い合わせ等)</li>
+                    <li><strong>スマホ・タブレット対応のレスポンシブデザイン</strong></li>
+                </ul>
+
+                <h3>🎨 制作に関する注意事項</h3>
+                <ul>
+                    <li>画像・テキスト素材はお客様にご用意いただきます</li>
+                    <li>著作権に問題のある素材の使用はお断りいたします</li>
+                    <li>公序良俗に反する内容、法令に違反する可能性のある内容は制作できません</li>
+                    <li>競合他社の完全模倣や著作権侵害となる制作はお受けできません</li>
+                </ul>
+
+                <h3>💰 お支払いに関する注意事項</h3>
+                <ul>
+                    <li>お支払いは銀行振込またはクレジットカード決済となります</li>
+                    <li><strong>分割払いは対応しておりません（一括払いのみ）</strong></li>
+                    <li>領収書が必要な場合は事前にお申し出ください</li>
+                    <li><strong>返金には対応しておりません</strong></li>
+                    <li><strong>代金をお支払いいただいたご本人様のサイトのみ制作いたします</strong></li>
+                    <li><strong>上記に違反した場合、金輪際サービスをご利用いただけなくなります</strong></li>
+                </ul>
+
+                <h3>🔧 技術的な注意事項</h3>
+                <ul>
+                    <li>制作したホームページの著作権はお客様に帰属します</li>
+                    <li>サーバーへのアップロード作業は含まれておりません</li>
+                    <li>ドメイン取得・レンタルサーバー契約は別途必要です</li>
+                    <li>完成後の軽微な修正は無料ですが、大幅な変更は追加料金が発生する場合があります</li>
+                    <li><strong>修正依頼は一週間以内にご対応いたします</strong></li>
+                </ul>
+
+                <h3>📞 サポートに関する注意事項</h3>
+                <ul>
+                    <li>営業時間は平日9:00-18:00となります</li>
+                    <li>土日祝日は緊急時を除き対応いたしかねます</li>
+                    <li>制作期間中は専用のチャットツールでやり取りを行います</li>
+                    <li><strong>電話でのサポートは受け付けておりません</strong></li>
+                </ul>
+
+                <h3>⚖️ 免責事項</h3>
+                <ul>
+                    <li>制作したホームページの成果（売上・コンバージョン等）については保証いたしかねます</li>
+                    <li>お客様の事業内容や市場環境による影響は責任を負いかねます</li>
+                    <li>天災・システム障害等による納期遅延の場合、損害賠償責任は負いません</li>
+                    <li>第三者との紛争が生じた場合、当社は一切の責任を負いません</li>
+                </ul>
+
+                <p style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 5px; border-left: 4px solid #ffc107;">
+                    <strong>⚠️ 重要:</strong> 本サービスをお申し込みいただいた時点で、上記すべての注意事項にご同意いただいたものとみなします。ご不明な点がございましたら、お申し込み前に必ずお問い合わせください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // スクロール時のヘッダー効果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(56, 189, 248, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%)';
+            }
+        });
+    </script>
+</body>
+</html>
